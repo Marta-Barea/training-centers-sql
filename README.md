@@ -18,9 +18,10 @@ cd trining-ceneters-sql
 Create a file named `.env` with your database credentials:
 
 ```dotenv
-DB_NAME=training_centers
-DB_USER=your_user
-DB_PASS=your_password
+MYSQL_ROOT_PASSWORD=your_password
+MYSQL_DATABASE=training_centers
+MYSQL_USER=your_user
+MYSQL_PASSWORD=your_password
 ```
 3. Run the project
 
@@ -37,11 +38,45 @@ This will:
 - Run all queries in `queries/`
 - Export results as .csv files in `results/`
 
+💡 Note: If you're running MySQL locally:
+- Make sure your server is running
+- The .env credentials must match your local MySQL user
+
 # Requirements
 
-- [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) for schema design and query execution
+- [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) or another SQL client for schema design and query execution
 - [MySQL Server](https://dev.mysql.com/downloads/mysql/) as the relational database engine
 - `make`(preinstalled on macOS/Linux)
+
+## Optional: Run MySQL via Docker
+
+If you don't have MySQL installed locally, you can run the project fully in Docker.
+
+1. Requirements
+
+- [Docker](https://www.docker.com/products/docker-desktop) 
+- [Docker Compose](https://docs.docker.com/compose/) 
+- SQL client
+
+2. Start the MySQL Container
+
+```bash
+docker-compose up -d
+```
+
+This will launch a MySQL 8.0 container with the credentials defined in your `.env`.
+
+3. Connect via SQL Client
+
+Use the following details:
+
+- Host: localhost
+- Port: 3306
+- User: your_user
+- Password: your_password
+- Schema: training_centers
+
+You can now run queries manually or use the Makefile.
 
 # Project Structure
 
@@ -49,7 +84,9 @@ This will:
 training-centers-sql/
 ├── .env                    
 ├── .gitignore
-├── Makefile                
+├── .dockerignore    
+├── Makefile
+├── docker-composo.yaml                    
 ├── README.md        
 ├── schema/
 │   ├── create_tables.sql
