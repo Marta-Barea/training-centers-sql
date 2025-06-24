@@ -1,0 +1,26 @@
+# Environment files
+.env
+.env.*
+
+# Query results
+/results
+
+# Raw data files (optional, ignore if not needed inside container)
+*.csv
+/data/*.csv
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Git and version control
+.git
+.gitignore
+
+# Editor and OS metadata
+*.swp
+*.swo
+*.bak
+*.log
+.vscode/
+.idea/
