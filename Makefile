@@ -1,11 +1,11 @@
 include .env
 export $(shell sed 's/=.*//' .env)
 
-MYSQL_CMD=mysql -u $(DB_USER) -p$(DB_PASS)
-MYSQL_DB=$(MYSQL_CMD) $(DB_NAME)
+MYSQL_CMD=mysql -u $(MYSQL_USER) -p$(MYSQL_PASSWORD)
+MYSQL_DB=$(MYSQL_CMD) $(MYSQL_DATABASE)
 
 setup-db:
-	$(MYSQL_CMD) -e "DROP DATABASE IF EXISTS $(DB_NAME); CREATE DATABASE $(DB_NAME);"
+	$(MYSQL_CMD) -e "DROP DATABASE IF EXISTS $(MYSQL_DATABASE); CREATE DATABASE $(MYSQL_DATABASE);"
 	$(MYSQL_DB) < schema/create_tables.sql
 
 insert-data:
