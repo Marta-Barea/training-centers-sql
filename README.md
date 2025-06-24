@@ -35,7 +35,7 @@ This will:
 - Generate the schema
 - Insert fictional data
 - Run all queries in `queries/`
-- Export results as .csv files in results/
+- Export results as .csv files in `results/`
 
 # Requirements
 
