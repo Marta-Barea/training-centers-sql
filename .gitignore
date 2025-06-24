@@ -1,0 +1,34 @@
+# Ignore SQL dump files in specific folders (e.g., backups or exports)
+dumps/
+backups/
+exports/
+
+# Optionally ignore SQL dumps based on naming
+*_dump.sql
+*_backup.sql
+*.tmp.sql
+
+# MySQL Workbench temporary/backup files
+*.mwb~
+*.mwb.bak
+*.bak
+
+# Environment configuration (e.g., database credentials)
+.env
+.env.*
+
+# IDE/editor files
+.vscode/
+.idea/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Python cache files 
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Enviornement varables and configuration files
+.env
