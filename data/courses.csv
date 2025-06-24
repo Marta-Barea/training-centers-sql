@@ -1,0 +1,6 @@
+id_courses,course_name,duration_hours,category,level,price,id_center
+1,Intro to Python,40,Programming,Beginner,180.0,1
+2,SQL for Analysts,30,Data,Intermediate,150.0,2
+3,Deep Learning,60,AI,Advanced,,1
+4,Tableau Visualization,25,BI,Intermediate,120.0,3
+5,Git and GitHub,20,Tools,Beginner,90.0,2
