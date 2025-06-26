@@ -1,7 +1,7 @@
 include .env
 export $(shell sed 's/=.*//' .env)
 
-MYSQL_CMD=mysql -u $(MYSQL_USER) -p$(MYSQL_PASSWORD)
+MYSQL_CMD=mysql -u $(MYSQL_USER) -p$(MYSQL_PASSWORD) -h $(MYSQL_HOST) -P$(MYSQL_PORT)
 MYSQL_DB=$(MYSQL_CMD) $(MYSQL_DATABASE)
 
 setup-db:
